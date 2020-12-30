@@ -1,0 +1,1508 @@
+{
+	"info": {
+		"_postman_id": "631958e9-6188-42a6-94f4-e31e6d24e532",
+		"name": "Završni zadatak Online Gradebook",
+		"description": "Testiranje Online Gradebook aplikacije za završni test kursa QA tester",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var tokenRes = jsonData.token;\r",
+							"pm.environment.set(\"token\", tokenRes);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"password_confirmation\": \"{{password}}\",\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register no first name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"{{last_name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"password_confirmation\": \"{{password}}\",\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register no last name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"{{first_name}}\",\r\n    \"lastName\": \"\",\r\n    \"password\": \"{{password}}\",\r\n    \"password_confirmation\": \"{{password}}\",\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register no password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"{{first_name}}\",\r\n    \"lastName\": \"{{last_name}}\",\r\n    \"password\": \"\",\r\n    \"password_confirmation\": \"{{password}}\",\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register no password verification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});*/"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"{{first_name}}\",\r\n    \"lastName\": \"{{last_name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"password_confirmation\": \"\",\r\n    \"email\": \"{{email}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register no email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"password_confirmation\": \"{{password}}\",\r\n    \"email\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/register",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var tokenRes = jsonData.token;\r",
+							"var user_id = jsonData.user.professor.user_id\r",
+							"pm.environment.set(\"token\", tokenRes);\r",
+							"pm.environment.set(\"user_id\", user_id);\r",
+							"\r",
+							"pm.test('Has token', function() {\r",
+							"  pm.expect(jsonData).to.have.property('token');\r",
+							"});\r",
+							"\r",
+							"pm.test('UserName is ok', function() {\r",
+							"  pm.expect(jsonData.user.firstName).to.eq('Vuk');\r",
+							"});\r",
+							"\r",
+							"pm.test('Email is ok', function() {\r",
+							"  pm.expect(jsonData.user.email).to.eq('vuk.vojvodic021@gmail.com');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/login",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login no email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var error = jsonData.error;\r",
+							"pm.test('Has error', function() {\r",
+							"  pm.expect(jsonData).to.have.property('error');\r",
+							"});\r",
+							"pm.test('Error = invalid credentials', function() {\r",
+							"  pm.expect(error).to.eq('invalid_credentials');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"{{password}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/login",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login no password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var error = jsonData.error;\r",
+							"pm.test('Has error', function() {\r",
+							"  pm.expect(jsonData).to.have.property('error');\r",
+							"});\r",
+							"pm.test('Error = invalid credentials', function() {\r",
+							"  pm.expect(error).to.eq('invalid_credentials');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/login",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visit All Ggradebooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var data = jsonData.data;\r",
+							"var page = jsonData.current_page;\r",
+							"var total = jsonData.total;\r",
+							"\r",
+							"pm.test('First page', function() {\r",
+							"  pm.expect(page).to.eq(1);\r",
+							"});\r",
+							"\r",
+							"pm.test('Pagination has 10 items', function() {\r",
+							"  pm.expect(data.length).to.eq(10);\r",
+							"});\r",
+							"\r",
+							"pm.test('Data has title', function() {\r",
+							"  pm.expect(data[0]).to.have.property('title');\r",
+							"});\r",
+							"\r",
+							"pm.test('Data has students', function() {\r",
+							"  pm.expect(data[0]).to.have.property('students');\r",
+							"});\r",
+							"pm.test('Professor has firstName', function() {\r",
+							"  pm.expect(data[0].professor.user).to.have.property('firstName');\r",
+							"});\r",
+							"\r",
+							"pm.test('There is ' + total + ' gradebooks', function() {  \r",
+							"    pm.expect(total).to.not.eq(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries?page=1",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visit All Professors page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var targetId = pm.environment.get('user_id'), firstMatch = pm.response.json().find((column) => { return column.user_id === targetId; });\r",
+							"\r",
+							"pm.test('Professor Vuk exists', function() {\r",
+							"  pm.expect(firstMatch.user.firstName).to.eq(pm.environment.get('first_name'));\r",
+							"  pm.expect(firstMatch.user.lastName).to.eq(pm.environment.get('last_name'));\r",
+							"  pm.expect(firstMatch.user.email).to.eq(pm.environment.get('email'));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/professors",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"professors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Professor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": [0],\r\n    \"firstName\": \"Vuktest\",\r\n    \"lastName\": \"Vojtest\",\r\n    \"diary_id\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/professors",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"professors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Professor no first name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": [0],\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"Vojtest\",\r\n    \"diary_id\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/professors",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"professors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Professor no last name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": [0],\r\n    \"firstName\": \"Vuktest\",\r\n    \"lastName\": \"\",\r\n    \"diary_id\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/professors",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"professors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Gradebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var gradebook = jsonData.id;\r",
+							"pm.environment.set(\"gradebook_id\", gradebook);\r",
+							"pm.test(\"Gradebook created\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Gradebook title is corrrect\", function () {\r",
+							"    pm.expect(jsonData.title).to.eq(pm.environment.get('Grade_title'));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"professor_id\": {{user_id}},\r\n    \"title\": \"{{Grade_title}}2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Gradebook no title",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"professor_id\": {{user_id}},\r\n    \"title\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Gradebook no professor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"professor_id\": \"\",\r\n    \"title\": \"{{Grade_title}}2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Visit My Gradebook page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.test('Professor Vuk exists', function() {\r",
+							"  pm.expect(jsonData.professor.user.firstName).to.eq(pm.environment.get('first_name'));\r",
+							"  pm.expect(jsonData.professor.user.lastName).to.eq(pm.environment.get('last_name'));\r",
+							"  pm.expect(jsonData.professor.user.email).to.eq(pm.environment.get('email'));\r",
+							"});\r",
+							"pm.test(\"My Gradebooks page is not empty\", function () {\r",
+							"    pm.expect(jsonData).to.have.property('id').eq(601);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries/my-diary/{{user_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"my-diary",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one Gradebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Gradebook created\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(jsonData.success).to.eq(true);\r",
+							"});\r",
+							"pm.test(\"Add students message is ok\", function () {\r",
+							"    pm.expect(jsonData.message).to.eq(\"Gallery Saved!!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Vuktest\",\r\n    \"lastName\": \"Vojtest\",\r\n    \"url\": [0]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/students",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Student no first name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"Vojtest\",\r\n    \"url\": [0]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/students",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Student no last name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Vuktest\",\r\n    \"lastName\": \"\",\r\n    \"url\": [0]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/students",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Gradebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var gradebook = jsonData.id;\r",
+							"pm.environment.set(\"gradebook_id\", gradebook);\r",
+							"\r",
+							"pm.test(\"Gradebook edited\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(jsonData.id).to.eq(pm.environment.get(\"gradebook_id\"));\r",
+							"    pm.expect(jsonData.professor_id).to.eq(pm.environment.get(\"user_id\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Title edited\", function () {\r",
+							"    pm.expect(jsonData.title).to.eq(\"Vuktest2\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 615,\r\n    \"title\": \"Vuktest2\",\r\n    \"professor_id\": 1038,\r\n    \"created_at\": \"2020-12-26 18:00:04\",\r\n    \"updated_at\": \"2020-12-26 18:00:04\",\r\n    \"professor\": {\r\n        \"id\": 1038,\r\n        \"user_id\": 1038,\r\n        \"url\": null,\r\n        \"created_at\": \"2020-12-24 10:38:18\",\r\n        \"updated_at\": \"2020-12-24 10:38:18\",\r\n        \"user\": {\r\n            \"id\": 1038,\r\n            \"firstName\": \"Vuk\",\r\n            \"lastName\": \"Vojvodic\",\r\n            \"email\": \"vuk.vojvodic021@gmail.com\",\r\n            \"email_verified_at\": \"2020-12-24 10:38:18\",\r\n            \"termsAndConditions\": null,\r\n            \"created_at\": \"2020-12-24 10:38:18\",\r\n            \"updated_at\": \"2020-12-24 10:38:18\"\r\n        }\r\n    },\r\n    \"students\": [\r\n        {\r\n            \"id\": 405,\r\n            \"firstName\": \"Vuktest\",\r\n            \"lastName\": \"Vojtest\",\r\n            \"diary_id\": 615,\r\n            \"created_at\": \"2020-12-26 18:04:20\",\r\n            \"updated_at\": \"2020-12-26 18:04:20\"\r\n        },\r\n        {\r\n            \"id\": 406,\r\n            \"firstName\": \"Vuktest\",\r\n            \"lastName\": \"Vojtest\",\r\n            \"diary_id\": 615,\r\n            \"created_at\": \"2020-12-26 18:06:59\",\r\n            \"updated_at\": \"2020-12-26 18:06:59\"\r\n        }\r\n    ],\r\n    \"comments\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Gradebook no title",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 615,\r\n    \"title\": \"\",\r\n    \"professor_id\": 1038,\r\n    \"created_at\": \"2020-12-26 18:00:04\",\r\n    \"updated_at\": \"2020-12-26 18:00:04\",\r\n    \"professor\": {\r\n        \"id\": 1038,\r\n        \"user_id\": 1038,\r\n        \"url\": null,\r\n        \"created_at\": \"2020-12-24 10:38:18\",\r\n        \"updated_at\": \"2020-12-24 10:38:18\",\r\n        \"user\": {\r\n            \"id\": 1038,\r\n            \"firstName\": \"Vuk\",\r\n            \"lastName\": \"Vojvodic\",\r\n            \"email\": \"vuk.vojvodic021@gmail.com\",\r\n            \"email_verified_at\": \"2020-12-24 10:38:18\",\r\n            \"termsAndConditions\": null,\r\n            \"created_at\": \"2020-12-24 10:38:18\",\r\n            \"updated_at\": \"2020-12-24 10:38:18\"\r\n        }\r\n    },\r\n    \"students\": [\r\n        {\r\n            \"id\": 405,\r\n            \"firstName\": \"Vuktest\",\r\n            \"lastName\": \"Vojtest\",\r\n            \"diary_id\": 615,\r\n            \"created_at\": \"2020-12-26 18:04:20\",\r\n            \"updated_at\": \"2020-12-26 18:04:20\"\r\n        },\r\n        {\r\n            \"id\": 406,\r\n            \"firstName\": \"Vuktest\",\r\n            \"lastName\": \"Vojtest\",\r\n            \"diary_id\": 615,\r\n            \"created_at\": \"2020-12-26 18:06:59\",\r\n            \"updated_at\": \"2020-12-26 18:06:59\"\r\n        }\r\n    ],\r\n    \"comments\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var comment = jsonData.id;\r",
+							"var gradebook = jsonData.diary_id;\r",
+							"pm.environment.set(\"gradebook_id\", gradebook);\r",
+							"pm.environment.set(\"comment_id\", comment);\r",
+							"\r",
+							"pm.test(\"Gradebook created\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(jsonData.success).to.eq(true);\r",
+							"});\r",
+							"pm.test(\"Add students message is ok\", function () {\r",
+							"    pm.expect(jsonData.message).to.eq(\"Gallery Saved!!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Moj prvi koment\",\r\n    \"user_id\": {{user_id}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/comments",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment no text",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"\",\r\n    \"user_id\": {{user_id}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/comments",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Comment deleted\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}/comments/{{comment_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}",
+						"comments",
+						"{{comment_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Gradebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var gradebook = jsonData.id;\r",
+							"pm.environment.set(\"gradebook_id\", gradebook);\r",
+							"\r",
+							"pm.test(\"Gradebook deleted\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(jsonData.id).to.eq(pm.environment.get(\"gradebook_id\"));\r",
+							"    pm.expect(jsonData.professor_id).to.eq(pm.environment.get(\"user_id\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Title edited\", function () {\r",
+							"    pm.expect(jsonData.title).to.eq(\"Vuktest2\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get deleted Gradebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Appi_url}}/diaries/{{gradebook_id}}",
+					"host": [
+						"{{Appi_url}}"
+					],
+					"path": [
+						"diaries",
+						"{{gradebook_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
