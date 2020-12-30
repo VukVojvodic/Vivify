@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://gradebook.vivifyideas.com/",
+    "env": {
+        "token": ""
+    }
+}

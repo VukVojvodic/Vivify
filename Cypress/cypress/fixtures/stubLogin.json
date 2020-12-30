@@ -1,0 +1,20 @@
+{
+    "token": "",
+    "user": {
+        "id": 1038,
+        "firstName": "Vuk",
+        "lastName": "Vojvodic",
+        "email": "vuk.vojvodic021@gmail.com",
+        "email_verified_at": "2020-12-24 10:38:18",
+        "termsAndConditions": null,
+        "created_at": "2020-12-24 10:38:18",
+        "updated_at": "2020-12-24 10:38:18",
+        "professor": {
+            "id": 1038,
+            "user_id": 1038,
+            "url": null,
+            "created_at": "2020-12-24 10:38:18",
+            "updated_at": "2020-12-24 10:38:18"
+        }
+    }
+}
