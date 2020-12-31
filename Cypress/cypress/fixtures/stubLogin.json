@@ -1,20 +1,20 @@
 {
-    "token": "",
-    "user": {
-        "id": 1038,
-        "firstName": "Vuk",
-        "lastName": "Vojvodic",
-        "email": "vuk.vojvodic021@gmail.com",
-        "email_verified_at": "2020-12-24 10:38:18",
-        "termsAndConditions": null,
-        "created_at": "2020-12-24 10:38:18",
-        "updated_at": "2020-12-24 10:38:18",
-        "professor": {
-            "id": 1038,
-            "user_id": 1038,
-            "url": null,
-            "created_at": "2020-12-24 10:38:18",
-            "updated_at": "2020-12-24 10:38:18"
-        }
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ncmFkZWJvb2stYXBpLnZpdmlmeWlkZWFzLmNvbVwvYXBpXC9sb2dpbiIsImlhdCI6MTYwOTQwNTIyMiwiZXhwIjoxNjA5NDkxNjIyLCJuYmYiOjE2MDk0MDUyMjIsImp0aSI6Im9BRnNEekFTNlFpQ0N6ZnEiLCJzdWIiOjEwMzgsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.SAPL4gVb6HBWO47Uq9Ld-QGNGDlmweIugJYY8onvNxc",
+  "user": {
+    "id": 1038,
+    "firstName": "Vuk",
+    "lastName": "Vojvodic",
+    "email": "vuk.vojvodic021@gmail.com",
+    "email_verified_at": "2020-12-24 10:38:18",
+    "termsAndConditions": null,
+    "created_at": "2020-12-24 10:38:18",
+    "updated_at": "2020-12-24 10:38:18",
+    "professor": {
+      "id": 1038,
+      "user_id": 1038,
+      "url": null,
+      "created_at": "2020-12-24 10:38:18",
+      "updated_at": "2020-12-24 10:38:18"
     }
+  }
 }

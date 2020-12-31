@@ -37,19 +37,22 @@ describe("Testing Login Page", () => {
         cy.get(Locators.Login.Button).click()
         token = cy.getLocalStorage('token')
         cy.intercept('POST', 'https://gradebook-api.vivifyideas.com/api/login',
-            { fixture: 'stubLogin.json', token }
+            { fixture: 'stubLogin.json' }
         )
+        cy.contains('All Gradebooks Page').should('be.visible')
+        cy.get(Locators.SignOut.Logoff).click()
     })
     it('Intercepted login', () => {
         cy.get(Locators.Login.Email).type('vuk.vojvodic021@gmail.com')
         cy.get(Locators.Login.Password).type('12345678')
         cy.get(Locators.Login.Button).click()
-        cy.intercept('https://gradebook-api.vivifyideas.com/api/login', (req) => {
+        cy.intercept('POST', 'https://gradebook-api.vivifyideas.com/api/login', (req) => {
             req.reply((res) => {
-                expect(res.body.user.id).to.eq(1080)
+                expect(res.body.user.id).to.eq(1038)
             })
-        }
-        )
+        })
+        cy.contains('All Gradebooks Page').should('be.visible')
+        cy.get(Locators.SignOut.Logoff).click()
     })
     it('login no data', () => {
         cy.get(Locators.Login.Button).click()
@@ -103,4 +106,7 @@ describe("Testing Login Page", () => {
             expect(response.statusText).to.equal("Unauthorized")
         })
     })
+    
+        
+   
 })
