@@ -1,0 +1,333 @@
+[
+    {
+        "id": 1030,
+        "user_id": 1030,
+        "url": null,
+        "created_at": "2020-12-23 20:50:45",
+        "updated_at": "2020-12-23 20:50:45",
+        "user": {
+            "id": 1030,
+            "firstName": "sfsfsdfsd",
+            "lastName": "dsfdsfdsfsf",
+            "email": "tralalaa@gmail.com",
+            "email_verified_at": "2020-12-23 20:50:45",
+            "termsAndConditions": null,
+            "created_at": "2020-12-23 20:50:45",
+            "updated_at": "2020-12-23 20:50:45",
+            "professor": {
+                "id": 1030,
+                "user_id": 1030,
+                "url": null,
+                "created_at": "2020-12-23 20:50:45",
+                "updated_at": "2020-12-23 20:50:45"
+            }
+        },
+        "diary": null,
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1031,
+        "user_id": 1031,
+        "url": null,
+        "created_at": "2020-12-24 07:51:07",
+        "updated_at": "2020-12-24 07:51:07",
+        "user": {
+            "id": 1031,
+            "firstName": "Rade",
+            "lastName": "Radovic",
+            "email": "testhome@test.com",
+            "email_verified_at": "2020-12-24 07:51:07",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 07:51:07",
+            "updated_at": "2020-12-24 07:51:07",
+            "professor": {
+                "id": 1031,
+                "user_id": 1031,
+                "url": null,
+                "created_at": "2020-12-24 07:51:07",
+                "updated_at": "2020-12-24 07:51:07"
+            }
+        },
+        "diary": {
+            "id": 593,
+            "title": "Rade gradebook",
+            "professor_id": 1031,
+            "created_at": "2020-12-24 09:12:03",
+            "updated_at": "2020-12-24 09:12:03"
+        },
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1032,
+        "user_id": 1032,
+        "url": null,
+        "created_at": "2020-12-24 08:26:56",
+        "updated_at": "2020-12-24 08:26:56",
+        "user": {
+            "id": 1032,
+            "firstName": "Tijana",
+            "lastName": "Test",
+            "email": "tijana@test.com",
+            "email_verified_at": "2020-12-24 08:26:56",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 08:26:56",
+            "updated_at": "2020-12-24 08:26:56",
+            "professor": {
+                "id": 1032,
+                "user_id": 1032,
+                "url": null,
+                "created_at": "2020-12-24 08:26:56",
+                "updated_at": "2020-12-24 08:26:56"
+            }
+        },
+        "diary": null,
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1033,
+        "user_id": 1033,
+        "url": null,
+        "created_at": "2020-12-24 08:28:03",
+        "updated_at": "2020-12-24 08:28:03",
+        "user": {
+            "id": 1033,
+            "firstName": "Tijana",
+            "lastName": "Test",
+            "email": "tijana@test1.com",
+            "email_verified_at": "2020-12-24 08:28:03",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 08:28:03",
+            "updated_at": "2020-12-24 08:28:03",
+            "professor": {
+                "id": 1033,
+                "user_id": 1033,
+                "url": null,
+                "created_at": "2020-12-24 08:28:03",
+                "updated_at": "2020-12-24 08:28:03"
+            }
+        },
+        "diary": null,
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1034,
+        "user_id": 1034,
+        "url": null,
+        "created_at": "2020-12-24 08:57:58",
+        "updated_at": "2020-12-24 08:57:58",
+        "user": {
+            "id": 1034,
+            "firstName": "Dada",
+            "lastName": "Edada",
+            "email": "dada@da.com",
+            "email_verified_at": "2020-12-24 08:57:58",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 08:57:58",
+            "updated_at": "2020-12-24 08:57:58",
+            "professor": {
+                "id": 1034,
+                "user_id": 1034,
+                "url": null,
+                "created_at": "2020-12-24 08:57:58",
+                "updated_at": "2020-12-24 08:57:58"
+            }
+        },
+        "diary": {
+            "id": 617,
+            "title": "Novi title",
+            "professor_id": 1034,
+            "created_at": "2020-12-26 22:08:50",
+            "updated_at": "2020-12-26 22:08:50"
+        },
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1035,
+        "user_id": 1035,
+        "url": null,
+        "created_at": "2020-12-24 09:05:32",
+        "updated_at": "2020-12-24 09:05:32",
+        "user": {
+            "id": 1035,
+            "firstName": "Biki",
+            "lastName": "Serefina",
+            "email": null,
+            "email_verified_at": null,
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 09:05:32",
+            "updated_at": "2020-12-24 09:05:32",
+            "professor": {
+                "id": 1035,
+                "user_id": 1035,
+                "url": null,
+                "created_at": "2020-12-24 09:05:32",
+                "updated_at": "2020-12-24 09:05:32"
+            }
+        },
+        "diary": {
+            "id": 592,
+            "title": "prvi dnevnik",
+            "professor_id": 1035,
+            "created_at": "2020-12-24 09:10:34",
+            "updated_at": "2020-12-24 09:10:34"
+        },
+        "professor_has_many_images": [
+            {
+                "id": 670,
+                "url": "https:\/\/www.fpsp.edu.rs\/wp-content\/uploads\/2015\/10\/gost-profesor-tanja-miscevic-800x480.jpg",
+                "professor_id": 1035,
+                "student_id": null,
+                "created_at": "2020-12-24 09:05:32",
+                "updated_at": "2020-12-24 09:05:32"
+            }
+        ]
+    },
+    {
+        "id": 1036,
+        "user_id": 1036,
+        "url": null,
+        "created_at": "2020-12-24 10:12:10",
+        "updated_at": "2020-12-24 10:12:10",
+        "user": {
+            "id": 1036,
+            "firstName": "Martin",
+            "lastName": "Rodrigez",
+            "email": "martin@test.com",
+            "email_verified_at": "2020-12-24 10:12:10",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 10:12:10",
+            "updated_at": "2020-12-24 10:12:10",
+            "professor": {
+                "id": 1036,
+                "user_id": 1036,
+                "url": null,
+                "created_at": "2020-12-24 10:12:10",
+                "updated_at": "2020-12-24 10:12:10"
+            }
+        },
+        "diary": null,
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1037,
+        "user_id": 1037,
+        "url": null,
+        "created_at": "2020-12-24 10:30:13",
+        "updated_at": "2020-12-24 10:30:13",
+        "user": {
+            "id": 1037,
+            "firstName": "test",
+            "lastName": "test",
+            "email": "test@test.com",
+            "email_verified_at": "2020-12-24 10:30:13",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 10:30:13",
+            "updated_at": "2020-12-24 10:30:13",
+            "professor": {
+                "id": 1037,
+                "user_id": 1037,
+                "url": null,
+                "created_at": "2020-12-24 10:30:13",
+                "updated_at": "2020-12-24 10:30:13"
+            }
+        },
+        "diary": null,
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1038,
+        "user_id": 1038,
+        "url": null,
+        "created_at": "2020-12-24 10:38:18",
+        "updated_at": "2020-12-24 10:38:18",
+        "user": {
+            "id": 1038,
+            "firstName": "Vuk",
+            "lastName": "Vojvodic",
+            "email": "vuk.vojvodic021@gmail.com",
+            "email_verified_at": "2020-12-24 10:38:18",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 10:38:18",
+            "updated_at": "2020-12-24 10:38:18",
+            "professor": {
+                "id": 1038,
+                "user_id": 1038,
+                "url": null,
+                "created_at": "2020-12-24 10:38:18",
+                "updated_at": "2020-12-24 10:38:18"
+            }
+        },
+        "diary": {
+            "id": 601,
+            "title": "Vukov Gradebook",
+            "professor_id": 1038,
+            "created_at": "2020-12-25 18:50:38",
+            "updated_at": "2020-12-26 10:19:03"
+        },
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1039,
+        "user_id": 1039,
+        "url": null,
+        "created_at": "2020-12-24 11:43:20",
+        "updated_at": "2020-12-24 11:43:20",
+        "user": {
+            "id": 1039,
+            "firstName": "Sara",
+            "lastName": "Stanacev",
+            "email": "sarastanacev97@gmail.com",
+            "email_verified_at": "2020-12-24 11:43:20",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 11:43:20",
+            "updated_at": "2020-12-24 11:43:20",
+            "professor": {
+                "id": 1039,
+                "user_id": 1039,
+                "url": null,
+                "created_at": "2020-12-24 11:43:20",
+                "updated_at": "2020-12-24 11:43:20"
+            }
+        },
+        "diary": {
+            "id": 598,
+            "title": "Dnevnik",
+            "professor_id": 1039,
+            "created_at": "2020-12-25 12:22:57",
+            "updated_at": "2020-12-25 12:22:57"
+        },
+        "professor_has_many_images": []
+    },
+    {
+        "id": 1040,
+        "user_id": 1040,
+        "url": null,
+        "created_at": "2020-12-24 15:39:57",
+        "updated_at": "2020-12-24 15:39:57",
+        "user": {
+            "id": 1040,
+            "firstName": "Sara",
+            "lastName": "Stanacev",
+            "email": "sarastanacev97@gmail.com",
+            "email_verified_at": "2020-12-24 15:39:57",
+            "termsAndConditions": null,
+            "created_at": "2020-12-24 15:39:57",
+            "updated_at": "2020-12-24 15:39:57",
+            "professor": {
+                "id": 1040,
+                "user_id": 1040,
+                "url": null,
+                "created_at": "2020-12-24 15:39:57",
+                "updated_at": "2020-12-24 15:39:57"
+            }
+        },
+        "diary": {
+            "id": 594,
+            "title": "Sarin dnevnik",
+            "professor_id": 1040,
+            "created_at": "2020-12-24 16:14:33",
+            "updated_at": "2020-12-24 16:14:33"
+        },
+        "professor_has_many_images": []
+    }
+]
