@@ -32,7 +32,7 @@
     "MyGradebook":{
         "AddSubmit": ".btn-primary",
         "Delete": ".btn-danger",
-        "EditGB": "a[href='/single-gradebook/601/edit']",
+        "EditGB": ".btn-warning",
         "Comment": "textarea[class='form-control']"
     },
     "CreateGB":{
@@ -53,6 +53,13 @@
         "Add": ".btn-sm",
         "URL": "input[placeholder='Image URL']",
         "Submit": "button[type='submit']"
+    },
+    "AddStudent":{
+        "FN": "#firstName",
+        "LN": "#lastName",
+        "Add": ".mb-3",
+        "URL": "input[placeholder='Image URL']",
+        "Submit": ".mt-3"
     },
     "SignOut":{
         "Logoff": "a[href='#']"

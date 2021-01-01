@@ -9,7 +9,7 @@ var stringE = "PKN785P0m8znnJEBSIR28vJcLUdXEZ7PP5VaQo9o00hJEc@UyKJINyNRN1OGZg4C4
 var message = 'Please fill out this field.'
 
 describe("Testing Create Gradebook Page", () => {
-    beforeEach("Visit Create Professor", () => {
+    beforeEach("Login", () => {
         cy.visit('/')
         cy.url().should("contains", "gradebook.vivifyideas")
         authLogin.login("vuk.vojvodic021@gmail.com", '12345678')
@@ -74,7 +74,7 @@ describe("Testing Create Gradebook Page", () => {
         cy.contains('The given data was invalid.').should('be.visible')
         cy.get(Locators.SignOut.Logoff).click()
     })
-    it('Create GB no Pof', () => {
+    it('Create GB no Prof', () => {
         cy.get(Locators.Header.CreateGradebook).click()
         cy.contains('Create Gradebook Page').should('be.visible')
         cy.get(Locators.CreateGB.Title).type('Vojtest')
